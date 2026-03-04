@@ -1,2 +1,0 @@
-# Bizim-Cennet-Website
-site
