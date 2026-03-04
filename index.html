@@ -1,100 +1,11 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bizim Cennet Bungalov | Datça</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = { theme: { extend: { colors: { 'kai-bg': '#F9F8F6', 'kai-text': '#2C2C2B', 'kai-light': '#8A8A85' }, fontFamily: { 'serif': ['Lora', 'serif'], 'sans': ['Montserrat', 'sans-serif'] } } } }
-    </script>
-    <style>
-        body { background-color: #F9F8F6; color: #2C2C2B; -webkit-font-smoothing: antialiased; }
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 1.4s cubic-bezier(0.22, 1, 0.36, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-    </style>
+    <title>Index</title>
 </head>
-<body class="font-sans">
-
-    <nav class="fixed w-full z-50 px-8 py-3 flex justify-between items-center bg-white/95 backdrop-blur-md text-kai-text shadow-sm transition-all duration-500" id="navbar">
-        <a href="index.html">
-            <img src="logo.png" alt="Bizim Cennet Bungalov" class="h-16 md:h-20 object-contain">
-        </a>
-        <div class="hidden md:flex space-x-12 text-[11px] tracking-[0.2em] uppercase font-medium items-center">
-            <a href="index.html" class="hover:text-kai-light transition border-b border-kai-text pb-1">Anasayfa</a>
-            <a href="odalar.html" class="hover:text-kai-light transition">Odalar</a>
-            <a href="restoran.html" class="hover:text-kai-light transition">Restoran</a>
-            <a href="galeri.html" class="hover:text-kai-light transition">Galeri</a>
-            <a href="iletisim.html" class="hover:text-kai-light transition">İletişim</a>
-        </div>
-    </nav>
-
-    <header class="relative h-screen w-full flex flex-col justify-center items-center text-center pt-20">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover brightness-[0.65]" alt="Bizim Cennet Datça">
-        </div>
-        <div class="relative z-10 text-white reveal active">
-            <h1 class="text-5xl md:text-7xl font-serif font-light mb-6">Doğayla iç içe,<br>sade ve zarif bir kaçış.</h1>
-            <a href="odalar.html" class="mt-8 inline-block border border-white px-10 py-4 hover:bg-white hover:text-black transition duration-500 text-[10px] tracking-[0.2em] uppercase">Odaları Keşfet</a>
-        </div>
-    </header>
-
-    <section class="py-40 px-6 max-w-4xl mx-auto text-center reveal">
-        <h2 class="text-3xl font-serif mb-8 text-kai-text">Sadelikten gelen lüks.</h2>
-        <p class="text-kai-light leading-loose text-lg font-light">
-            Datça'nın Mesudiye bölgesinde, eşsiz doğada, ahşabın sıcaklığını ve denizin esintisini bir araya getirdik. Bizim Cennet Bungalov, kalabalıklardan uzaklaşıp derin bir nefes almak isteyenler için tasarlandı.
-        </p>
-    </section>
-
-    <footer class="bg-white pt-24 pb-12 px-6 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-16 md:gap-8 mb-16 reveal">
-            <div class="flex flex-col items-start">
-                <img src="logo.png" alt="Bizim Cennet Logo" class="h-24 md:h-32 mb-6 object-contain">
-                <p class="text-kai-light font-light text-sm leading-relaxed max-w-xs">
-                    Mesudiye Mahallesi, Hayıtbükü sk.<br>No:37/B Datça / Muğla
-                </p>
-            </div>
-            <div class="pt-4">
-                <h4 class="text-[10px] tracking-[0.2em] uppercase font-bold text-kai-text mb-6">Hızlı Menü</h4>
-                <div class="flex flex-col space-y-3 text-sm font-light text-kai-light">
-                    <a href="index.html" class="hover:text-kai-text transition">Anasayfa</a>
-                    <a href="odalar.html" class="hover:text-kai-text transition">Odalar</a>
-                    <a href="restoran.html" class="hover:text-kai-text transition">Restoran</a>
-                    <a href="galeri.html" class="hover:text-kai-text transition">Galeri</a>
-                    <a href="iletisim.html" class="hover:text-kai-text transition">İletişim</a>
-                </div>
-            </div>
-            <div class="pt-4">
-                <h4 class="text-[10px] tracking-[0.2em] uppercase font-bold text-kai-text mb-6">Bize Ulaşın</h4>
-                <div class="space-y-4 text-sm font-light text-kai-light">
-                    <a href="tel:+905434462523" class="flex items-center space-x-3 hover:text-kai-text transition">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                        <span>+90 (543) 446 25 23</span>
-                    </a>
-                    <a href="mailto:info@bizimcennetbungalov.com" class="flex items-center space-x-3 hover:text-kai-text transition">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        <span>info@bizimcennetbungalov.com</span>
-                    </a>
-                    <a href="https://instagram.com/bizimcennetbungalov" target="_blank" class="flex items-center space-x-3 hover:text-kai-text transition">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.5"></circle></svg>
-                        <span>@bizimcennetbungalov</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto border-t border-gray-100 pt-8 text-center text-[10px] tracking-[0.1em] text-kai-light uppercase reveal">
-            <p>© Bizim Cennet Bungalov. Tüm hakları saklıdır.</p>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); } });
-            });
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        });
-    </script>
+<body>
+    <h1>Welcome to our Cennet Website!</h1>
 </body>
 </html>
