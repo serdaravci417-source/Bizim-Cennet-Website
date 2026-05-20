@@ -1,0 +1,42 @@
+{
+  "categories": [
+    {
+      "id": "breakfast",
+      "slug": "serpme-kahvalti",
+      "name": { "tr": "Kahvaltı", "en": "Breakfast" }
+    },
+    {
+      "id": "grills",
+      "slug": "izgaralar",
+      "name": { "tr": "Izgaralar", "en": "Grills" }
+    },
+    {
+      "id": "drinks",
+      "slug": "icecekler",
+      "name": { "tr": "İçecekler", "en": "Drinks" }
+    }
+  ],
+  "products": [
+    {
+      "category": "breakfast",
+      "name": { "tr": "Serpme Köy Kahvaltısı", "en": "Traditional Village Breakfast" },
+      "description": { "tr": "Doğal köy ürünleri, ev yapımı reçeller, sınırsız çay ile.", "en": "Organic village products, homemade jams, with unlimited tea." },
+      "price": 450,
+      "available": true
+    },
+    {
+      "category": "grills",
+      "name": { "tr": "Kasap Köfte", "en": "Butcher's Meatballs" },
+      "description": { "tr": "Günün taze yeşillikleri ve pilav eşliğinde.", "en": "Served with fresh seasonal greens and rice." },
+      "price": 380,
+      "available": true
+    },
+    {
+      "category": "drinks",
+      "name": { "tr": "Ev Yapımı Taze Limonata", "en": "Homemade Fresh Lemonade" },
+      "description": { "tr": "Nane ve buz ile ferahlatıcı lezzet.", "en": "Refreshing taste with mint and ice." },
+      "price": 90,
+      "available": true
+    }
+  ]
+}
