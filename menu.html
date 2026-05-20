@@ -7,7 +7,6 @@
     <!-- Hızlı ve modern tasarım için Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Akıcı kaydırma ve gizli scrollbar eklentileri */
         html { scroll-behavior: smooth; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -26,15 +25,120 @@
 
     <!-- Sağa-Sola Kaydırılabilir Sabit Kategori Menüsü -->
     <nav id="category-bar" class="sticky top-[53px] bg-[#faf9f6] z-40 border-b border-[#e5e4e0] flex gap-4 px-4 py-3 overflow-x-auto no-scrollbar scroll-smooth">
-        <!-- Kategoriler JavaScript ile buraya dolacak -->
+        <!-- Kategoriler dinamik dolacak -->
     </nav>
 
     <!-- Menü İçerik Alanı -->
     <main id="menu-content" class="max-w-md mx-auto px-4 mt-6 space-y-8">
-        <!-- Ürünler ve Kategori Başlıkları JavaScript ile buraya dolacak -->
+        <!-- Ürünler dinamik dolacak -->
     </main>
 
-    <!-- JavaScript Dosyamızı Bağlıyoruz -->
-    <script src="menu.js"></script>
+    <script>
+        // TÜM MENÜ VERİSİ BURADA - Fiyatları ve ürünleri buradan kolayca değiştirebilirsin
+        const menuData = {
+          "categories": [
+            { "id": "breakfast", "name": { "tr": "Kahvaltı", "en": "Breakfast" } },
+            { "id": "grills", "name": { "tr": "Izgaralar", "en": "Grills" } },
+            { "id": "drinks", "name": { "tr": "İçecekler", "en": "Drinks" } }
+          ],
+          "products": [
+            {
+              "category": "breakfast",
+              "name": { "tr": "Serpme Köy Kahvaltısı", "en": "Traditional Village Breakfast" },
+              "description": { "tr": "Doğal köy ürünleri, ev yapımı reçeller, sınırsız çay ile.", "en": "Organic village products, homemade jams, with unlimited tea." },
+              "price": 450,
+              "available": true
+            },
+            {
+              "category": "grills",
+              "name": { "tr": "Kasap Köfte", "en": "Butcher's Meatballs" },
+              "description": { "tr": "Günün taze yeşillikleri ve pilav eşliğinde.", "en": "Served with fresh seasonal greens and rice." },
+              "price": 380,
+              "available": true
+            },
+            {
+              "category": "drinks",
+              "name": { "tr": "Ev Yapımı Taze Limonata", "en": "Homemade Fresh Lemonade" },
+              "description": { "tr": "Nane ve buz ile ferahlatıcı lezzet.", "en": "Refreshing taste with mint and ice." },
+              "price": 90,
+              "available": true
+            }
+          ]
+        };
+
+        let currentLang = 'tr';
+
+        // Sayfa açıldığında menüyü yükle
+        document.addEventListener("DOMContentLoaded", () => {
+            renderMenu();
+        });
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const btnTr = document.getElementById('btn-tr');
+            const btnEn = document.getElementById('btn-en');
+            
+            if (lang === 'tr') {
+                btnTr.className = "px-3 py-1 rounded-full bg-[#3d5a45] text-white transition-all";
+                btnEn.className = "px-3 py-1 rounded-full bg-transparent text-[#6b6a65] transition-all";
+            } else {
+                btnEn.className = "px-3 py-1 rounded-full bg-[#3d5a45] text-white transition-all";
+                btnTr.className = "px-3 py-1 rounded-full bg-transparent text-[#6b6a65] transition-all";
+            }
+            renderMenu();
+        }
+
+        function renderMenu() {
+            const categoryBar = document.getElementById('category-bar');
+            const menuContent = document.getElementById('menu-content');
+            
+            categoryBar.innerHTML = '';
+            menuContent.innerHTML = '';
+
+            // 1. Kategorileri Oluştur
+            menuData.categories.forEach(cat => {
+                const catName = cat.name[currentLang];
+                categoryBar.innerHTML += `
+                    <a href="#cat-${cat.id}" class="whitespace-nowrap px-4 py-1.5 rounded-xl bg-[#e5e4e0]/50 text-sm font-medium hover:bg-[#3d5a45]/10 transition-colors">
+                        ${catName}
+                    </a>
+                `;
+            });
+
+            // 2. Ürünleri Listele
+            menuData.categories.forEach(cat => {
+                const catName = cat.name[currentLang];
+                const catProducts = menuData.products.filter(p => p.category === cat.id && p.available);
+
+                if (catProducts.length === 0) return;
+
+                let categoryHTML = `
+                    <section id="cat-${cat.id}" class="scroll-mt-28">
+                        <h2 class="text-xl font-serif font-bold text-[#3d5a45] border-b border-[#3d5a45]/20 pb-2 mb-4">${catName}</h2>
+                        <div class="space-y-5">
+                `;
+
+                catProducts.forEach(prod => {
+                    const prodName = prod.name[currentLang];
+                    const prodDesc = prod.description[currentLang];
+                    
+                    categoryHTML += `
+                        <div class="flex justify-between items-start gap-4 group">
+                            <div class="space-y-1">
+                                <h3 class="font-medium text-[16px] text-[#2c2c2c]">${prodName}</h3>
+                                <p class="text-xs text-[#7c7b75] leading-relaxed pr-4">${prodDesc}</p>
+                            </div>
+                            <div class="font-semibold text-sm text-[#2c2c2c] whitespace-nowrap">
+                                ${prod.price} TL
+                            </div>
+                        </div>
+                    `;
+                });
+
+                categoryHTML += `</div></section>`;
+                menuContent.innerHTML += categoryHTML;
+            });
+        }
+    </script>
 </body>
 </html>
