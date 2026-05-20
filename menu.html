@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bizim Cennet - Dijital Menü</title>
+    <!-- Hızlı ve modern tasarım için Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Akıcı kaydırma ve gizli scrollbar eklentileri */
+        html { scroll-behavior: smooth; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-[#faf9f6] text-[#2c2c2c] font-sans antialiased pb-12">
+
+    <!-- Sabit Üst Bar (Logo ve Dil Seçimi) -->
+    <header class="sticky top-0 bg-[#faf9f6]/90 backdrop-blur-md z-50 border-b border-[#e5e4e0] px-4 py-3 flex justify-between items-center">
+        <div class="font-serif text-xl font-bold tracking-wide text-[#3d5a45]">BİZİM CENNET</div>
+        <div class="flex gap-2 text-sm font-semibold">
+            <button id="btn-tr" onclick="setLanguage('tr')" class="px-3 py-1 rounded-full bg-[#3d5a45] text-white transition-all">TR</button>
+            <button id="btn-en" onclick="setLanguage('en')" class="px-3 py-1 rounded-full bg-transparent text-[#6b6a65] transition-all">EN</button>
+        </div>
+    </header>
+
+    <!-- Sağa-Sola Kaydırılabilir Sabit Kategori Menüsü -->
+    <nav id="category-bar" class="sticky top-[53px] bg-[#faf9f6] z-40 border-b border-[#e5e4e0] flex gap-4 px-4 py-3 overflow-x-auto no-scrollbar scroll-smooth">
+        <!-- Kategoriler JavaScript ile buraya dolacak -->
+    </nav>
+
+    <!-- Menü İçerik Alanı -->
+    <main id="menu-content" class="max-w-md mx-auto px-4 mt-6 space-y-8">
+        <!-- Ürünler ve Kategori Başlıkları JavaScript ile buraya dolacak -->
+    </main>
+
+    <!-- JavaScript Dosyamızı Bağlıyoruz -->
+    <script src="menu.js"></script>
+</body>
+</html>
